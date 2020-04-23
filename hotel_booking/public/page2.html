@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	 <head>
+		<title>Ezrooms</title>
+		<link rel="stylesheet" type="text/css" href="group.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="scripts.js"></script>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		
+			
+			<div id=header>
+				<a href="page1.html" style="float: left;"><img src="logo.png" width="120" height="60" alt="logo"></a>
+				<ul class="menu">
+                    <li><a href="#" id="Signup">Sign Up</a></li>
+	                <li><a href="#" id="Signin">Sign In</a></li>
+	                <li><a href="#" id="Search">Search</a></li> 
+                </ul>
+					<hr>
+			</div>
+		<div id=HomeContainer>
+
+			
+			<div class="filterbar">
+				<form action="page3.html" class="search">
+						Start Date:
+						<input id="startdate" type="date" onfocus="(this.type='date')">
+						End Date:
+						<input id="checkout" type="date" onfocus="(this.type='date')">
+						Number of room(s):
+						<input type="number" name="numberOfRoom" id="numberOfRoom" value="1" min="0">
+						Price:
+						<input type="number" name="price" id="priceofhotel" value="1" min="0">
+						Star of hotel:  
+						<input type="number" name="starofhotel" id="star" value="3" min="0" max="5">
+						
+						<button type="submit" class="click">Search</button>
+				</form>
+			</div> 			
+
+			<div id=map></div>
+
+			<div id="hotels">
+				<div id=hotels1>
+					<div id=spanhotel1>
+						Continental
+					</div>
+					<a href="page3.html">
+					<img src="hotel1.png" alt="ad1" width="270" height="300">
+					</a>
+				</div>
+				<div id=hotels2>
+					<div id=spanhotel1>
+						Hilton
+					</div>
+					<a href="page3.html">
+					<img src="hotel2.png" alt="ad1" width="270" height="300">
+					</a>
+				</div>
+				<div id=hotels3>
+					<div id=spanhotel2>
+						Grand Chancellor
+					</div>
+					<a href="page3.html">
+					<img src="hotel3.png" alt="ad1" width="270" height="300">
+					</a>
+				</div>
+				<div id=hotels4>
+					<div id=spanhotel2>
+						Pullman
+					</div>
+					<a href="page3.html">
+					<img src="hotel4.png" alt="ad1" width="270" height="300">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id=footer>
+            	<hr>
+            	<ul class="menu">
+            		<li><a href="page1.html" id="Contactinfo">Contact information</a><li>
+
+            	</ul>	
+            		<hr>
+				<ul class="menu">
+                    <li><a href="page1.html" id="Copyright">Copyright</a></li>
+	                <li><a href="#" id="Policy">Policy</a></li>
+	                <li><a href="#" id="Cancellations">Canellations</a></li>
+	                <li><a href="#" id="Sitemap">Site Map</a></li>  
+                </ul>
+					<hr>
+			</div>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk2gJluY37xer0zdHPerf23VFnUS4lxc&callback=mapfunction" type="text/javascript"></script>
+	</body>
+
+</html>
+

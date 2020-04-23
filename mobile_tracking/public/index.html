@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+</html>
+<body>
+  <style>
+  	h1{
+  		font-family:"Bahnschrift";
+  	}
+  	form{
+  		font-family:"Lucida Console";
+  	}
+  </style>
+
+<body style="background-color:#282a36;">
+<h1><font color="#f8f8f2">Find Your Phone without GPS!</font></h1>
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-admin.js"></script> -->
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<button type="button" onclick="loadDoc()">Refresh map</button>
+<div id="googleMap" style="width:100%;height:600px;"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyASgY5MMPrCPfVisxjaz19xmg60flbNTro",
+    authDomain: "silver-courier-140408.firebaseapp.com",
+    databaseURL: "https://silver-courier-140408.firebaseio.com",
+    projectId: "silver-courier-140408",
+    storageBucket: "silver-courier-140408.appspot.com",
+    messagingSenderId: "478296073279",
+    appId: "1:478296073279:web:aedd3dc9ae607997b2848a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var lat = 39.56764858;
+  var long = -105.00733121;
+  var str =0;
+
+  var obj = {"mcc":0, "mnc":0, "lac":0, "cid":0};
+  function myMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(lat,long),
+      zoom:16,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var contentstring = '<p>loc of phone</p>';
+    var infowindow = new google.maps.InfoWindow({
+      content:contentstring
+    });
+
+    var pos = {lat: lat, lng: long};
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      title: "here"
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+  function loadDoc(){
+
+    var database = firebase.database();
+    var userId = firebase.auth();
+    firebase.database().ref('/').once('value').then(function(snapshot) {
+      str = (snapshot.val()) || 'Anonymous';
+      obj.mcc = str.MCC;
+      obj.mnc = str.MNC;
+      obj.lac = str.Lac;
+      obj.cid = str.Cellid;
+      console.log(obj.mcc+ " "+ obj.mnc+" "+ obj.lac+ " "+obj.cid);
+      var str = "{\"token\": \"f889a207d1ec50\",\"radio\": \"lte\",\"mcc\":"+ obj.mcc + ",\"mnc\":" + obj.mnc +",\"cells\": [{\"lac\":" + obj.lac + ",\"cid\":" + obj.cid + "}],\"address\": 1}";
+      // console.log(str);
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://us1.unwiredlabs.com/v2/process.php",
+        "method": "POST",
+        "headers": {},
+        "processData": false,
+        "data": str
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        lat = response.lat;
+        long = response.lon;
+        console.log("lat is " + lat + " long is " + long);
+        myMap();
+      });
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3TuCGGqMxqe9jbIH2dfYBPVLezyJK0B8&callback=myMap"></script>
+</body>
+</html>

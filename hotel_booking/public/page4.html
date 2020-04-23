@@ -1,0 +1,89 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ezrooms</title>
+		<link rel="stylesheet" type="text/css" href="group.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<script src="script.js"></script>
+	</head>
+
+	<body>
+
+			<div id=header>
+			<a href="page1.html" style="float: left;"><img src="logo.png" width="120" height="60" alt="logo"></a>
+				<ul class="menu">
+                    <li><a href="page6.html" id="Signup">Sign Up</a></li>
+	                <li><a href="#" id="Signin">Sign In</a></li>
+	                <li><a href="#" id="Search">Search</a></li> 
+                </ul>
+					<hr>
+			</div>
+
+
+			<div id=HomeContainer>
+				<div id="hotelImage">
+					<img id="hotelImagePage4" src="image15.png" alt="hotelImage1">
+				</div>
+				<p id="verification">
+				
+				ibis Adelaide, Adelaide, Australia<br>
+				Check-in : Thu, Mar 15, 2018<br>
+				Check-out : Fri, Mar 16, 2018<br>
+				Total length : 1 night<br>
+				Number of room : 1 room<br>
+				Type of room : Standard Room<br>
+				<b id="price">Total Price : AUD $265</b>
+				</p>
+
+
+				<div id="customersinfo">
+					<form>
+  						<fieldset>
+						<h3>Your details:</h3>
+    					First name:<input type="text" name="firstname">
+    					Last name:<input type="text" name="lastname">
+    					Title:<input type="text" name="title"><br>
+    					Email Address:<input type="text" name="email"><br>
+    					<i>*Comfirmation email sent to this address</i><br>
+    					Who are you booking for?<br>
+    					<input type="radio" name="who"> I am the main guest<br>
+  						<input type="radio" name="who">I am booking for someone else<br>
+    					Main guest name:<input type="text" name="mainguestname">
+    					<br><br>
+    					<input type="submit" value="Proceed to Payment">
+  					</fieldset>
+					</form>
+
+					<div id="confirmbox" onclick="window.location.href='page1.html'">
+						Proceed to Payment 
+					</div>
+					<div id="goback" onclick="window.location.href='page3.html'">
+						Go Back
+					</div>	
+				</div>
+			</div>
+
+			<div id=footer>
+            	<hr>
+            	<ul class="menu">
+            		<li><a href="page1.html" id="Contactinfo">Contact information</a><li>
+
+            	</ul>	
+            		<hr>
+				<ul class="menu">
+                    <li><a href="page1.html" id="Copyright">Copyright</a></li>
+	                <li><a href="#" id="Policy">Policy</a></li>
+	                <li><a href="#" id="Cancellations">Canellations</a></li>
+	                <li><a href="#" id="Sitemap">Site Map</a></li>  
+                </ul>
+					<hr>
+			</div>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk2gJluY37xer0zdHPerf23VFnUS4lxc&callback=mapfunction" type="text/javascript"></script>
+	</body>
+
+</html>
