@@ -9,5 +9,5 @@
   c. Cell Identity (CID)
   d. Location Area Code (LAC)
   
-  2. Hotel Booking Site
-  - Hotel booking site implementing basic HTML, CSS, JS and SQL. 
+2. Hotel Booking Site
+- Hotel booking site implementing basic HTML, CSS, JS and SQL. 
