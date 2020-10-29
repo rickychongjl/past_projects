@@ -6,7 +6,6 @@
   a. Mobile Country Code (MCC)
   b. Mobile Network Code (MNC)
   c. Cell Identity (CID)
-  d. Location Area Code (LAC)
-<br>
+  d. Location Area Code (LAC).
 2. Hotel Booking Site
 - Hotel booking site implementing basic HTML, CSS, JS and SQL. 
